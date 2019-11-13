@@ -23,10 +23,6 @@
 
 package main
 
-import (
-	"fmt"
-)
-
 func lengthOfLongestSubstring(s string) int {
 	lenStr := len(s)
 	var subString []byte //将不重复字符加入切片
@@ -58,13 +54,12 @@ func lengthOfLongestSubstring(s string) int {
 	return max
 }
 
-func main() {
-	// fmt.Println("请输入一串字符：")
-	// inputReader := bufio.NewReader(os.Stdin)
-	// input, err := inputReader.ReadString('\n')
-	// if err == nil {
-	// 	fmt.Println(lengthOfLongestSubstring(input))
-	// }
-	fmt.Println(lengthOfLongestSubstring(" "))
-
-}
+// func main() {
+// 	// fmt.Println("请输入一串字符：")
+// 	// inputReader := bufio.NewReader(os.Stdin)
+// 	// input, err := inputReader.ReadString('\n')
+// 	// if err == nil {
+// 	// 	fmt.Println(lengthOfLongestSubstring(input))
+// 	// }
+// 	fmt.Println(lengthOfLongestSubstring(" "))
+// }
