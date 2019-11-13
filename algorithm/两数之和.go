@@ -13,9 +13,7 @@
 // 链接：https://leetcode-cn.com/problems/two-sum
 // 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-package main
-
-import "fmt"
+package algorithm
 
 //1.
 // func twoSum(nums []int, target int) []int {
@@ -50,10 +48,4 @@ func twoSum(nums []int, target int) []int {
 		}
 	}
 	return []int{}
-}
-
-func main() {
-	array := [4]int{2, 7, 11, 15}
-	result := twoSum(array[:], 9)
-	fmt.Println(result)
 }
