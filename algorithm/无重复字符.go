@@ -52,13 +52,3 @@ func lengthOfLongestSubstring(s string) int {
 
 	return max
 }
-
-// func main() {
-// 	// fmt.Println("请输入一串字符：")
-// 	// inputReader := bufio.NewReader(os.Stdin)
-// 	// input, err := inputReader.ReadString('\n')
-// 	// if err == nil {
-// 	// 	fmt.Println(lengthOfLongestSubstring(input))
-// 	// }
-// 	fmt.Println(lengthOfLongestSubstring(" "))
-// }
