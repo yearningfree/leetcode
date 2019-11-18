@@ -47,73 +47,25 @@
 package algorithm
 
 func romanToInt(s string) int {
-	var jump bool
-	var sum int
-	for k, v := range s {
-		if jump {
-			jump = false
-			continue
+	sum, last := 0, 0
+	dir := map[byte]int{
+		'I': 1,
+		'V': 5,
+		'X': 10,
+		'L': 50,
+		'C': 100,
+		'D': 500,
+		'M': 1000,
+	}
+
+	for i := len(s) - 1; i >= 0; i-- {
+		tmp := dir[s[i]]
+		flag := 1
+		if tmp < last {
+			flag = -1
 		}
-		if v == 'I' {
-			if k+1 < len(s) {
-				switch s[k+1] {
-				case 'V':
-					sum += 4
-					jump = true
-				case 'X':
-					sum += 9
-					jump = true
-				default:
-					sum++
-
-				}
-			} else {
-				sum++
-			}
-		} else if v == 'X' {
-			if k+1 < len(s) {
-				switch s[k+1] {
-				case 'L':
-					sum += 40
-					jump = true
-				case 'C':
-					sum += 90
-					jump = true
-				default:
-					sum += 10
-
-				}
-			} else {
-				sum += 10
-			}
-		} else if v == 'C' {
-			if k+1 < len(s) {
-				switch s[k+1] {
-				case 'D':
-					sum += 400
-					jump = true
-				case 'M':
-					sum += 900
-					jump = true
-				default:
-					sum += 100
-
-				}
-			} else {
-				sum += 100
-			}
-		} else {
-			switch v {
-			case 'V':
-				sum += 5
-			case 'L':
-				sum += 50
-			case 'D':
-				sum += 500
-			case 'M':
-				sum += 1000
-			}
-		}
+		sum += flag * tmp
+		last = tmp
 	}
 	return sum
 }
